@@ -1,4 +1,4 @@
-// console.log('ok');
+'use strict';
 
 function take_ss(){
   html2canvas(document.querySelector("#target")).then(canvas => { 
@@ -10,10 +10,29 @@ function take_ss(){
   });
 }
 
-// const take=take_ss();
+function change_position(){
+  const ele=document.getElementById('position_select');
+  //selectの選択されたoptionの番号を取得
+  const get_num=ele.selectedIndex;
+  console.log(get_num);
+  //optionのvalueを取得
+  const get_value=ele.options[get_num].value;
+  console.log(get_value);
+
+  $('#target').css({"text-align":get_value});
+}
 
 window.onload=function(){
   document.getElementById('ss_btn').addEventListener('click',function(){
     take_ss();
+  });
+  document.getElementById('position_select').addEventListener('change',function(){
+    change_position();
+  });
+  //後で質問
+  document.getElementById('target').addEventListener('focus',function(){
+    $(this).select();
+    // this.innerHTML="";
+    console.log(this);
   });
 }
