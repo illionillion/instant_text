@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>instant_text</title>
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/html2canvas.js"></script>
   <script src="js/main.js"></script>
 </head>
@@ -16,12 +17,17 @@
   <main>
     <div id="canvas">
       <div id="target" contenteditable="true">文字を入力</div>
+      <!-- <textarea id="target" contenteditable="true">文字を入力</textarea> -->
       <div id="can_margin"></div>
       <div id="view"><img src="img/none_1.jpg" id="result" alt=""></div>
     </div>
     <div id="controller">
       <input type="button" id="ss_btn" value="画像を作成">
-      <!-- <input type="button" id="ss_download" value="ダウンロード"> -->
+      <select name="position_select" id="position_select">
+        <option value="center">中央揃え</option>
+        <option value="left">左揃え</option>
+        <option value="right">右揃え</option>
+      </select>
       <a href="#" id="ss_donwload">ダウンロード</a>
       
     </div>
