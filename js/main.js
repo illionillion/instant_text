@@ -22,6 +22,21 @@ function change_position(){
   $('#target').css({"text-align":get_value});
 }
 
+window.addEventListener('DOMContentLoaded', ()=>{
+  const target=document.querySelector('#target');
+  target.addEventListener('focus',()=>{
+    // console.log(target.innerHTML);
+    if(target.innerHTML){
+      const r=document.createRange();
+      // console.log(r)
+      r.setStart(target,0);
+      r.setEnd(target,1);
+      window.getSelection().addRange(r);
+    }
+
+  });
+});
+
 window.onload=function(){
   document.getElementById('ss_btn').addEventListener('click',function(){
     take_ss();
@@ -30,9 +45,9 @@ window.onload=function(){
     change_position();
   });
   //後で質問
-  document.getElementById('target').addEventListener('focus',function(){
-    $(this).select();
-    // this.innerHTML="";
-    console.log(this);
-  });
+  // document.getElementById('target').addEventListener('focus',function(){
+  //   $(this).select();
+  //   // this.innerHTML="";
+  //   console.log(this);
+  // });
 }
