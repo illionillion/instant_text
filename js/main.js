@@ -2,7 +2,7 @@
 
 function take_ss(){
   html2canvas(document.querySelector("#target")).then(canvas => { 
-    var imgData = canvas.toDataURL();
+    const imgData = canvas.toDataURL();
     console.log(imgData);
     document.getElementById("result").src = imgData;
     document.getElementById("ss_donwload").setAttribute("download", "");
@@ -32,7 +32,7 @@ function change_color(ele){
     $('#target').css('background-color',ele.value);
     return;
   }
-  
+
 }
 
 window.addEventListener('DOMContentLoaded', ()=>{
