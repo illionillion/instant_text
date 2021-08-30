@@ -10,31 +10,6 @@ function take_ss(){
   });
 }
 
-function change_position(ele){
-  //selectの選択されたoptionの番号を取得
-  const get_num=ele.selectedIndex;
-  console.log(get_num);
-  //optionのvalueを取得
-  const get_value=ele.options[get_num].value;
-  console.log(get_value);
-
-  $('#target').css({"text-align":get_value});
-}
-
-
-function change_color(ele){
-
-  if(ele.name==='text_color'){
-    $('#target').css('color',ele.value);
-    return;
-  }
-  if(ele.name==='background_color'){
-    $('#target').css('background-color',ele.value);
-    return;
-  }
-
-}
-
 window.addEventListener('DOMContentLoaded', ()=>{
   const target=document.querySelector('#target');
   target.addEventListener('focus',()=>{
@@ -52,14 +27,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 
-
 window.onload=function(){
-  document.getElementById('ss_btn').addEventListener('click',function(){
-    take_ss();
-  });
-  document.getElementById('position_select').addEventListener('change',function(){
-    change_position(this);
-  });
+
+  const change=new Change();
+
+  let root = document.documentElement; //htmlのルート要素を取得
+  let style = window.getComputedStyle(root).getPropertyValue('font-size'); //ルート要素のcssプロパティを全て取得し、その中からフォントサイズを取得
+  let stFontSize = parseFloat(style); //float型の数値に変換
+  $('#font_size').val(stFontSize);
+  $('#font_size')[0].addEventListener('change',function(){ change.font_size(this); });
+  $('#ss_btn')[0].addEventListener('click', function(){ take_ss(); });
+  $('#position_select')[0].addEventListener('change',function(){ change.position(this); });
+  $('#text_color')[0].addEventListener('change',function(){change.color(this);});
+  $('#background_color')[0].addEventListener('change',function(){change.color(this);});
+
   //後で質問
   // document.getElementById('target').addEventListener('focus',function(){
   //   // $(this).select();
@@ -73,6 +54,4 @@ window.onload=function(){
   //   window.getSelection().addRange(range);
   //   console.log(this);
   // });
-  document.getElementById('text_color').addEventListener('change',function(){change_color(this);});
-  document.getElementById('background_color').addEventListener('change',function(){change_color(this);});
 }
