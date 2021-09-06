@@ -46,6 +46,7 @@ h1{
 
 #target{
   overflow-y: auto;
+  background-size: cover;
 }
 
 /* #target,#view::before{

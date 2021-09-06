@@ -31,12 +31,21 @@
         <input type="color" name="text_color" id="text_color" value="#000000"><label for="text_color">文字色</label>
 
         <input type="color" name="background_color" id="background_color" value="#ffffff"><label for="background_color">背景色</label>
+
       </div>
-      <select name="position_select" id="position_select">
-        <option value="center">中央揃え</option>
-        <option value="left">左揃え</option>
-        <option value="right">右揃え</option>
-      </select><br>
+      <div>
+        <label for="background_image">背景画像<input type="file" name="background_image" id="background_image" accept="image/*"></label>
+        <input type="button" id="image_reset" value="リセット">
+      </div>
+
+      <label for="position_select">
+        位置
+        <select name="position_select" id="position_select">
+          <option value="center">中央揃え</option>
+          <option value="left">左揃え</option>
+          <option value="right">右揃え</option>
+        </select>
+      </label><br>
       <label for="font_size">文字サイズ<input type="number" name="font_size" id="font_size" min="1" placeholder="文字サイズ">px</label><br>
       <input type="button" id="ss_btn" value="画像を作成"><br>
       <a href="#" id="ss_donwload">ダウンロード</a>
