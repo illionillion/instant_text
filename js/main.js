@@ -40,18 +40,7 @@ window.onload=function(){
   $('#position_select')[0].addEventListener('change',function(){ change.position(this); });
   $('#text_color')[0].addEventListener('change',function(){change.color(this);});
   $('#background_color')[0].addEventListener('change',function(){change.color(this);});
+  $('#background_image')[0].addEventListener('change',function(){change.image(this);});
+  $('#image_reset')[0].addEventListener('click',function(){change.image_reset();});
 
-  //後で質問
-  // document.getElementById('target').addEventListener('focus',function(){
-  //   // $(this).select();
-  //   // document.execCommand('SelectAll');//全て選択
-  //   // this.innerHTML="";
-  //   //rangeオブジェクトの作成
-  //   const range = document.createRange();
-  //   //取得した要素の内側を範囲とする
-  //   range.selectNodeContents(this);
-  //   //範囲を選択状態にする
-  //   window.getSelection().addRange(range);
-  //   console.log(this);
-  // });
 }
