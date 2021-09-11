@@ -1,12 +1,12 @@
 class Change{
 
   constructor() { /* コンストラクタ */
-    this.rotate =0; 
+    this.rotate =0;
   }
 
   //テキストの位置を変える
   position(ele){
-  
+
     //selectの選択されたoptionの番号を取得
     const get_num=ele.selectedIndex;
 
@@ -19,7 +19,7 @@ class Change{
 
   //文字色・背景色を変える
   color(ele){
-  
+
     if(ele.name==='text_color'){
       $('#target').css('color',ele.value);
       return;
@@ -28,14 +28,14 @@ class Change{
       $('#target').css('background-color',ele.value);
       return;
     }
-  
+
   }
 
   //文字サイズを変える
   font_size(ele){
-  
+
     $('#target').css('font-size',ele.value+'px');
-  
+
   }
 
   //90度回転
@@ -46,7 +46,7 @@ class Change{
 
   //背景画像を設定する
   image(ele){
-  
+
     let image=$("#"+ele.id).prop('files')[0];
     if(image){
       if(!image.type.match('image.*')){
@@ -58,15 +58,15 @@ class Change{
           $('#target').css('background-image','url('+fileReader.result+')');
       }
       fileReader.readAsDataURL(image);
-    }    
-  
+    }
+
   }
 
   //背景画像をリセットする
   image_reset(){
- 
+
     $('#target').css('background-image','none');
- 
+
   }
 
   //エディタと画像の画面を正方形にするため

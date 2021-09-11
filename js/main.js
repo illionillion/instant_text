@@ -4,7 +4,7 @@
 //スクリーンショット
 function take_ss(){
 
-  html2canvas($("#target")[0]).then(canvas => { 
+  html2canvas($("#target")[0]).then(canvas => {
 
     const imgData = canvas.toDataURL();
     // console.log(imgData);
