@@ -7,7 +7,7 @@ function take_ss(){
   html2canvas($("#target")[0]).then(canvas => { 
 
     const imgData = canvas.toDataURL();
-    console.log(imgData);
+    // console.log(imgData);
     $("#result").attr("src",imgData);
     $("#ss_donwload").attr("download", "");
     $("#ss_donwload").attr("href",imgData);
