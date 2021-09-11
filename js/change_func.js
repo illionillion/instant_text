@@ -6,7 +6,6 @@ class Change{
 
   //テキストの位置を変える
   position(ele){
-    // this.rotate=ele;
   
     //selectの選択されたoptionの番号を取得
     const get_num=ele.selectedIndex;
@@ -14,7 +13,6 @@ class Change{
     //optionのvalueを取得
     const get_value=ele.options[get_num].value;
 
-    // this.data=get_value;//thisはclass Change??
     $('#target').css({"text-align":get_value});
   
   }
