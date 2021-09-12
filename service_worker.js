@@ -1,7 +1,7 @@
 // キャッシュファイルの指定
-const CACHE_NAME = 'pwa-sample-caches';
+const CACHE_NAME = 'pwa-ins-txt-caches';
 let urlsToCache = [
-    '/poster-keisuke.github.io/',
+    '/illionillion.github.io/',
 ];
 
 // インストール処理
