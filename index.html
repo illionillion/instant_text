@@ -13,6 +13,7 @@
   <!-- ホーム画面に表示されるアプリアイコン -->
   <!-- <link rel="apple-touch-icon" href="icon.ico"> -->
   <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
   <title>Instant_Text</title>
   <meta name="description" content="編集したテキストを正方形の形でスクショ作成">
   <meta name="twitter:card" content="summary_large_image">
@@ -53,31 +54,42 @@
       <div id="view"><img src="img/none_1.jpg" id="result" alt=""></div>
     </div>
     <div id="controller">
-      <div>
-        <input type="color" name="text_color" id="text_color" value="#000000"><label for="text_color">文字色</label>
-
-        <input type="color" name="background_color" id="background_color" value="#ffffff"><label for="background_color">背景色</label>
-
+      <div id="text_controller">
+        <div>
+          <input type="color" name="text_color" id="text_color" value="#000000"><label for="text_color">文字色</label>
+          <input type="color" name="background_color" id="background_color" value="#ffffff"><label for="background_color">背景色</label>
+        </div>
+        <div>
+          <label for="background_image">背景画像<input type="file" name="background_image" id="background_image" accept="image/*"></label>
+          <input type="button" id="image_reset" value="背景画像リセット">
+        </div>
+        <label for="position_select">
+          位置
+          <select name="position_select" id="position_select">
+            <option value="center">中央揃え</option>
+            <option value="left">左揃え</option>
+            <option value="right">右揃え</option>
+          </select>
+        </label>
+        <input type="button" id="rotate" value="90度回転">
+        <div><label for="font_size">文字サイズ<input type="number" name="font_size" id="font_size" min="1" placeholder="文字サイズ">px</label></div>
       </div>
-      <div>
-        <label for="background_image">背景画像<input type="file" name="background_image" id="background_image" accept="image/*"></label>
-        <input type="button" id="image_reset" value="リセット">
-      </div>
 
-      <label for="position_select">
-        位置
-        <select name="position_select" id="position_select">
-          <option value="center">中央揃え</option>
-          <option value="left">左揃え</option>
-          <option value="right">右揃え</option>
-        </select>
-      </label>
-      <div><input type="button" id="rotate" value="90度回転"></div>
-      <div><label for="font_size">文字サイズ<input type="number" name="font_size" id="font_size" min="1" placeholder="文字サイズ">px</label></div>
-      <div><input type="button" id="ss_btn" value="画像を作成"></div>
-      <a href="#" id="ss_donwload">ダウンロード</a>
+      <div id="img_controller">
+        <div><input type="button" id="ss_btn" value="画像を作成"></div>
+        <a href="#" id="ss_donwload">ダウンロード</a>
+      </div>
 
     </div>
   </main>
+  <script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service_worker.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+    });
+    }
+  </script>
 </body>
 </html>
