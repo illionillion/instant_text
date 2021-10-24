@@ -9,7 +9,7 @@ function take_ss(){
     const imgData = canvas.toDataURL();
     // console.log(imgData);
     $("#result").attr("src",imgData);
-    $("#ss_donwload").attr("download", "");
+    $("#ss_donwload").attr("download", "inst_img");
     $("#ss_donwload").attr("href",imgData);
 
   });
@@ -28,7 +28,7 @@ function all_select(parentElem){
     // 対象子要素を選択状態にする
     selection.selectAllChildren(parentElem);
 
-  } 
+  }
 
 }
 

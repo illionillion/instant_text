@@ -49,6 +49,10 @@ h1{
   background-size: cover;
 }
 
+#tool_bar{
+  display: flex;
+  overflow-x: auto;
+}
 
 /* #view{
   border: 0 !important;
