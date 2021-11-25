@@ -76,6 +76,10 @@ h1{
 
 }
 
+.none{
+  display: none;
+}
+
 @media screen and (max-width:600px) {
   #canvas{
     width: 80%;
