@@ -9,8 +9,8 @@ function take_ss(){
     const imgData = canvas.toDataURL();
     // console.log(imgData);
     $("#result").attr("src",imgData);
-    // $("#ss_donwload").attr("download", "inst_img");
-    $("#ss_donwload").attr("download", imgData);
+    $("#ss_donwload").attr("download", "inst_img");
+    // $("#ss_donwload").attr("download", imgData);
     $("#ss_donwload").attr("href",imgData);
 
   });
