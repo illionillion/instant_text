@@ -82,6 +82,7 @@ class Change{
     canvas_width= Number(canvas_width.replace( "px" , "" ));
 
     $("#canvas").css("height",canvas_width);
+    // $("#viewer_float").css("width",canvas_width);
     $("#viewer").css("width",canvas_width);
     $("#viewer").css("height",canvas_width);
 
