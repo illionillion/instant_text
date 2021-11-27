@@ -45,17 +45,17 @@ $(function(){
 
 
   //イベント発火
-  $('#font_size')[0].addEventListener('change',function(){ change.font_size(this); });
-  $('#ss_btn')[0].addEventListener('click', function(){ take_ss(); });
-  $('#position_select')[0].addEventListener('change',function(){ change.position(this); });
-  $('#text_color')[0].addEventListener('change',function(){change.color(this);});
-  $('#background_color')[0].addEventListener('change',function(){change.color(this);});
-  $('#background_image')[0].addEventListener('change',function(){change.image(this);});
-  $('#image_reset')[0].addEventListener('click',function(){change.image_reset();});
-  $('#target')[0].addEventListener('click',function(){all_select(this);});
-  $('#rotate')[0].addEventListener('click',function(){change.rotate90();});
+  $('#font_size').change(function(){change.font_size(this);})
+  $('#ss_btn').click(function(){ take_ss(); });
+  $('#position_select').change(function(){ change.position(this); });
+  $('#text_color').change(function(){change.color(this);});
+  $('#background_color').change(function(){change.color(this);});
+  $('#background_image').change(function(){change.image(this);});
+  $('#image_reset').click(function(){change.image_reset();});
+  $('#target').click(function(){all_select(this);});
+  $('#rotate').click(function(){change.rotate90();});
   change.canvas_size();
-  window.addEventListener('resize', function(){change.canvas_size()});
+  $(window).resize(function(){change.canvas_size()}); //windowイベントは$(window)と記述する
 
 
 });
