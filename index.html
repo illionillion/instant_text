@@ -14,6 +14,7 @@
   <meta property="og:description" content="編集したテキストを正方形の形でスクショ作成" />
   <meta property="og:image" content="https://illionillion.github.io/instant_text/icon.ico" />
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/viewer.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/html2canvas.min.js"></script>
@@ -27,9 +28,16 @@
   <main>
     <div id="canvas">
       <div id="target" contenteditable="true">文字を入力</div>
-      <div id="view"><img src="img/none_1.jpg" id="result" alt=""></div>
+      <!-- <div id="view"><img src="img/none_1.jpg" id="result" alt=""></div> -->
     </div>
-    <!-- <div id="viewer" class="none"><img src="img/none_1.jpg" id="result" alt=""></div> -->
+    <div id="viewer_float" class="none">
+      <div id="viewer" class="wraper">
+        <img src="img/none_1.jpg" id="result" alt="">
+      </div>
+      <a href="#" id="ss_donwload">ダウンロード</a>
+      <!-- <a href="https://twitter.com/intent/tweet?text=insttext%20https://tanakama.jp/seo/toc.html%20https://pbs.twimg.com/media/FFBNLUDacAEWJSA?format=png&name=900x900"  id="share_tweet" target="_blank" >Twitterで共有</a> -->
+      <input type="button" id="close_float" value="閉じる">
+    </div>
     <div id="controller">
       <div id="text_controller">
         <div>
@@ -54,7 +62,7 @@
 
       <div id="img_controller">
         <div><input type="button" id="ss_btn" value="画像を作成"></div>
-        <a href="#" id="ss_donwload">ダウンロード</a>
+        <!-- <a href="#" id="ss_donwload">ダウンロード</a> -->
       </div>
 
     </div>

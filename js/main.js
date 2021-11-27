@@ -13,6 +13,10 @@ function take_ss(){
     // $("#ss_donwload").attr("download", imgData);
     $("#ss_donwload").attr("href",imgData);
 
+    // let url="https://twitter.com/intent/tweet?text=insttext%20"+location.href+"%20"+imgData; 
+    // $("#share_tweet").attr("href",url);
+
+    $("#viewer_float").removeClass("none");
   });
 
 }
@@ -54,8 +58,11 @@ $(function(){
   $('#image_reset').click(function(){change.image_reset();});
   $('#target').click(function(){all_select(this);});
   $('#rotate').click(function(){change.rotate90();});
+  $("#close_float").click(function() { $("#viewer_float").addClass("none"); })
   change.canvas_size();
   $(window).resize(function(){change.canvas_size()}); //windowイベントは$(window)と記述する
 
-
+  // setInterval(() => {
+  //   console.log(change);
+  // }, 1000);
 });

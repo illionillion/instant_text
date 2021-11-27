@@ -2,6 +2,10 @@ class Change{
 
   constructor() { /* コンストラクタ */
     this.rotate =0;
+    this.textposition="center";
+    this.textcolor="#000000";
+    this.textbackgroundcolor="#ffffff";
+    this.textsize=16;
   }
 
   //テキストの位置を変える
@@ -12,8 +16,8 @@ class Change{
 
     //optionのvalueを取得
     const get_value=ele.options[get_num].value;
-
-    $('#target').css({"text-align":get_value});
+    this.textposition=get_value;
+    $('#target').css("text-align",get_value);
   
   }
 
@@ -22,10 +26,12 @@ class Change{
 
     if(ele.name==='text_color'){
       $('#target').css('color',ele.value);
+      this.textcolor=ele.value;
       return;
     }
     if(ele.name==='background_color'){
       $('#target').css('background-color',ele.value);
+      this.textbackgroundcolor=ele.value;
       return;
     }
 
@@ -33,7 +39,7 @@ class Change{
 
   //文字サイズを変える
   font_size(ele){
-
+    this.textsize=Number(ele.value);
     $('#target').css('font-size',ele.value+'px');
 
   }
@@ -75,7 +81,9 @@ class Change{
     let canvas_width=$("#canvas").css("width");
     canvas_width= Number(canvas_width.replace( "px" , "" ));
 
-    $("#canvas").css("height",canvas_width/2);
+    $("#canvas").css("height",canvas_width);
+    $("#viewer").css("width",canvas_width);
+    $("#viewer").css("height",canvas_width);
 
   }
 
